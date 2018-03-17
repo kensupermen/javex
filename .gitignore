@@ -16,8 +16,9 @@ erl_crash.dump
 /node_modules
 /config/dev.secret.exs
 /config/prod.secret.exs
-/priv/static/css/application.css
-/priv/static/js/application.js
+/priv/static/css/app.css
+/priv/static/js/app.js
+.cache
 
 *.log
 priv/static
