@@ -1,0 +1,19 @@
+{
+  "name": "javex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kensupermen/javex.git",
+  "author": "kensupermen <votantho93@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "parcel build web/static/js/app.js --out-dir priv/static/js",
+    "watch": "parcel watch web/static/js/app.js --out-dir priv/static/js"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.2"
+  },
+  "dependencies": {
+    "phoenix": "file:deps/phoenix",
+    "phoenix_html": "file:deps/phoenix_html"
+  }
+}
