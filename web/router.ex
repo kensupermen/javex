@@ -13,6 +13,13 @@ defmodule Javex.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", Javex do
+    pipe_through :api
+    scope "/v1" do
+      post "/upload", FileUploadController, :upload
+    end
+  end
+
   scope "/", Javex do
     pipe_through :browser # Use the default browser stack
 

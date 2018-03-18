@@ -4,7 +4,7 @@
     <div class="container">
       <h1>Welcome Vue with Phoenix!!!</h1>
     </div>
-    <jav></jav>
+    <file-upload></file-upload>
     <app-footer></app-footer>
   </div>
 </template>
@@ -12,14 +12,14 @@
 <script>
 import AppFooter from './components/AppFooter';
 import AppHeader from './components/AppHeader';
-import Jav from './components/Jav';
+import FileUpload from './components/FileUpload';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
-    Jav 
+    FileUpload
   }
 };
 </script>
