@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
   name: 'FileUpload',
@@ -15,6 +16,17 @@ export default {
   methods: {
     uploadFile() {
       console.log("Submitted Image");
+      let formData = new FormData();
+      let data = document.querySelector('#inputImage');
+      formData.append("image", data.files[0])
+
+      const config = {
+        headers: { 'content-type': 'multipart/form-data' }
+      }
+      axios.post('http://localhost:4000/api/v1/upload', formData, config)
+        .then((response) =>{
+          console.log("Upload successful");
+        });
     }
   }
 };
