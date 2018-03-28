@@ -24,9 +24,8 @@ config :javex, Javex.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  # watchers: []
-  watchers: [node: ["node_modules/parcel-bundler/bin/cli.js", "watch", "web/static/js/app.js", "--out-dir", "priv/static/js"]]
-
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+                    cd: Path.expand("../", __DIR__)]]
 
 
 # Watch static and templates for browser reloading.

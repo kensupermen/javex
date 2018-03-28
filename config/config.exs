@@ -12,7 +12,7 @@ config :javex,
 # Configures the endpoint
 config :javex, Javex.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "i6tBWpdC2Dh9EHWG8otrRU8RaBGeQjuFHjtrkCT5rc+n2p4M0td+It0xXEiq0YKW",
+  secret_key_base: "+IV/t+gf75FUwMNpL61hhILFvKWSACK30kpEgHdB181eorO+ZAcNdS807U4refqm",
   render_errors: [view: Javex.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Javex.PubSub,
            adapter: Phoenix.PubSub.PG2]
