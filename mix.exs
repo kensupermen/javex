@@ -40,7 +40,15 @@ defmodule Javex.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+
+      {:arc, "~> 0.8.0"}, # upload and attachment
+
+      # Amazon S3:
+      {:ex_aws, "~> 1.1"},
+      {:hackney, "~> 1.9"},
+      {:poison, "~> 3.0"}
+
     ]
   end
 
