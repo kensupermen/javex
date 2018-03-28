@@ -22,7 +22,7 @@ exports.config = {
     stylesheets: {
       joinTo: "css/app.css",
       order: {
-        after: ["web/static/css/app.css"] // concat app.css last
+        after: ["web/static/css/app.scss"] // concat app.css last
       }
     },
     templates: {
@@ -54,6 +54,19 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
+    },
+    copycat: {
+      "fonts": ["node_modules/bootstrap-sass/assets/fonts/bootstrap"] // copy node_modules/bootstrap-sass/assets/fonts/bootstrap/* to priv/static/fonts/
+    },
+    sass: {
+      options: {
+        includePaths: ["node_modules/bootstrap-sass/assets/stylesheets"], // tell sass-brunch where to look for files to @import
+        precision: 8 // minimum precision required by bootstrap-sass 
+      }
+    },
+    vue: {
+      extractCSS: true,
+      out: 'priv/static/css/components.css'
     }
   },
 
@@ -64,6 +77,13 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    whitelist: ["phoenix", "phoenix_html", "vue"],
+    globals: {
+      Vue: 'vue/dist/vue.common.js',
+      $: 'jquery',
+      jQuery: 'jquery',
+      bootstrap: 'bootstrap-sass' // require bootstrap-sass' JavaScript globally
+    }
   }
 };
