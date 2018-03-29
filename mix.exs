@@ -20,7 +20,7 @@ defmodule Javex.Mixfile do
   def application do
     [
       mod: {Javex, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :ex_aws, :hackney, :poison, :sweet_xml]
     ]
   end
 
@@ -42,12 +42,15 @@ defmodule Javex.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
 
-      {:arc, "~> 0.8.0"}, # upload and attachment
+      #{:arc, "~> 0.8.0"}, # upload and attachment
 
       # Amazon S3:
-      {:ex_aws, "~> 1.1"},
+      {:ex_aws, "~> 2.0"},
+      {:ex_aws_s3, "~> 2.0"},
       {:hackney, "~> 1.9"},
-      {:poison, "~> 3.0"}
+      {:poison, "~> 3.0"},
+      {:sweet_xml, "~> 0.6"}, # parse XML response from S3
+      {:configparser_ex, "~> 2.0"}
 
     ]
   end

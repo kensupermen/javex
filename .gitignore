@@ -23,3 +23,5 @@ erl_crash.dump
 
 *.log
 priv/static
+
+.env
