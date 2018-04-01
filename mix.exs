@@ -47,8 +47,8 @@ defmodule Javex.Mixfile do
       # Amazon S3:
       {:ex_aws, "~> 2.0"},
       {:ex_aws_s3, "~> 2.0"},
-      {:hackney, "~> 1.9"},
-      {:poison, "~> 3.0"},
+      {:hackney, "~> 1.9"}, #  http client
+      {:poison, "~> 3.0"}, # JSON library
       {:sweet_xml, "~> 0.6"}, # parse XML response from S3
       {:configparser_ex, "~> 2.0"}
 
