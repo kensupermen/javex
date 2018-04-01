@@ -4,8 +4,8 @@ defmodule Javex.Repo.Migrations.CreateActress do
   def change do
     create table(:actresses) do
       add :name, :string
-      add :image, :string
-      add :view, :string
+      add :image_url, :string
+      add :view, :integer, default: 0
 
       timestamps()
     end

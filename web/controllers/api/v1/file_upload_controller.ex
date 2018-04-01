@@ -1,5 +1,6 @@
 defmodule Javex.FileUploadController do
   use Javex.Web, :controller
+  alias Javex.Actress
 
   def upload(conn, %{"image" => image_params}) do
     IO.puts "uploading..."
@@ -11,6 +12,18 @@ defmodule Javex.FileUploadController do
 
     ExAws.S3.put_object(bucket_name, image_filename, image_binary)
       |> ExAws.request!
+
+
+    changeset = Actress.changeset(%Actress{}, %{name: "test", image: "url", view: "0"})
+
+    Repo.insert!(changeset)
+      # {:ok, actress} ->
+        # IO.puts "Successful"
+        # conn
+        # |> put_flash(:info, "Image uploaded successfully!")
+        # |> redirect(to: upload_path(conn, :new)
+      # {:error, changeset} ->
+        # IO.puts "Erorrs"
 
     render conn, "show.json"
   end
