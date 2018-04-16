@@ -14,7 +14,7 @@ defmodule Javex.FileUploadController do
       |> ExAws.request!
 
 
-    changeset = Actress.changeset(%Actress{}, %{name: "test", image: "url", view: "0"})
+    changeset = Actress.changeset(%Actress{}, %{name: "test", image_url: "url", view: 0 })
 
     Repo.insert!(changeset)
       # {:ok, actress} ->

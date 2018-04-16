@@ -3,8 +3,8 @@ defmodule Javex.Actress do
 
   schema "actresses" do
     field :name, :string
-    field :image, :string
-    field :view, :string
+    field :image_url, :string
+    field :view, :integer
 
     timestamps()
   end
@@ -14,7 +14,7 @@ defmodule Javex.Actress do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :image, :view])
-    |> validate_required([:name, :image, :view])
+    |> cast(params, [:name, :image_url, :view])
+    |> validate_required([:name, :image_url, :view])
   end
 end
